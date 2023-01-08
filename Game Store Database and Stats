@@ -1,0 +1,18 @@
+----Create a game store database
+
+CREATE TABLE games (id INTEGER PRIMARY KEY, genres TEXT, name TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO games VALUES (1, "RPGS", "Star Ocean the Second Story", 75, 75);
+INSERT INTO games VALUES (2, "Strategy", "Tactics Ogre", 100, 80);
+INSERT INTO games VALUES (3, "Stimulation", "Sim City 2000", 150, 30);
+INSERT INTO games VALUES (4, "Platformer", "Mario Galaxy", 50, 40);
+INSERT INTO games VALUES (5, "HORROR", "Silent Hill", 25, 150);
+INSERT INTO games VALUES (6, "Action Adventure", "Legend of Zelda", 150, 50);
+
+--display the database ordered by price.
+SELECT * FROM games 
+ORDER BY price desc;
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM games
